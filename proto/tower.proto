@@ -1,0 +1,45 @@
+syntax = "proto3";
+package tower_service;
+
+service TowerService { 
+  rpc GetTower (TowerRequest) returns (TowerResponse) {}
+//  rpc ListTowers(Empty) returns (Towers) {}
+//  rpc CreateTower (CreateTowerRequest) returns (CreateTowerResponse) {}
+//  rpc UpdateTower (UpdateTowerRequest) returns (UpdateTowerResponse) {}
+//  rpc DeleteTower (TowerRequest) returns (DeleteTowerResponse) {}
+}
+
+message Empty {}
+
+message TowerRequest {
+    string id = 1;
+}
+
+message TowerResponse {
+    string id = 1;
+    string date_created = 2;
+}
+
+message CreateTowerRequest {
+    string id = 1;
+}
+
+message CreateTowerResponse {
+    string message = 1;
+}
+
+message UpdateTowerRequest {
+    string id = 1;
+}
+
+message UpdateTowerResponse {
+    string message = 1;
+}
+
+message DeleteTowerResponse {
+    string message = 1;
+}
+
+message Towers {
+    repeated TowerResponse users = 1;
+}
